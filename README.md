@@ -24,8 +24,8 @@ Before you get started, you'll need:
 To get started, run:
 
 - `npm install`
-- `npm serve app-web` to start the web application
-- `npm serve api-demo` to start the demo api
+- `npm run serve app-web` to start the web application
+- `npm run serve api-demo` to start the demo api
 
 ## License
 
