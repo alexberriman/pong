@@ -1,7 +1,7 @@
 {
-  "name": "ping-pong-webapp",
+  "name": "app-web",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/ping-pong-webapp/src",
+  "sourceRoot": "apps/web/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,7 +9,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/ping-pong-webapp"
+        "outputPath": "dist/apps/web"
       },
       "configurations": {
         "development": {
@@ -24,15 +24,15 @@
       "executor": "@nrwl/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "ping-pong-webapp:build"
+        "buildTarget": "app-web:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "ping-pong-webapp:build:development",
+          "buildTarget": "app-web:build:development",
           "hmr": true
         },
         "production": {
-          "buildTarget": "ping-pong-webapp:build:production",
+          "buildTarget": "app-web:build:production",
           "hmr": false
         }
       }
@@ -41,30 +41,30 @@
       "executor": "@nrwl/vite:preview-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "ping-pong-webapp:build"
+        "buildTarget": "app-web:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "ping-pong-webapp:build:development"
+          "buildTarget": "app-web:build:development"
         },
         "production": {
-          "buildTarget": "ping-pong-webapp:build:production"
+          "buildTarget": "app-web:build:production"
         }
       }
     },
     "test": {
       "executor": "@nrwl/vite:test",
-      "outputs": ["coverage/apps/ping-pong-webapp"],
+      "outputs": ["coverage/apps/web"],
       "options": {
         "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/apps/ping-pong-webapp"
+        "reportsDirectory": "../../coverage/apps/web"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/ping-pong-webapp/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/web/**/*.{ts,tsx,js,jsx}"]
       }
     }
   },
