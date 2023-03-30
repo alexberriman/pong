@@ -1,6 +1,6 @@
 export function App() {
   return (
-    <div>
+    <div className="flex">
       pong{' '}
       <span role="img" aria-label="pong">
         🏓
