@@ -1,7 +1,7 @@
 {
-  "name": "demo-api",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/demo-api/src",
+  "name": "api-demo",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/apis/demo/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -10,12 +10,12 @@
       "options": {
         "target": "node",
         "compiler": "tsc",
-        "outputPath": "dist/apps/demo-api",
-        "main": "apps/demo-api/src/main.ts",
-        "tsConfig": "apps/demo-api/tsconfig.app.json",
-        "assets": ["apps/demo-api/src/assets"],
+        "outputPath": "dist/apps/apis/demo",
+        "main": "apps/apis/demo/src/main.ts",
+        "tsConfig": "apps/apis/demo/tsconfig.app.json",
+        "assets": ["apps/apis/demo/src/assets"],
         "isolatedConfig": true,
-        "webpackConfig": "apps/demo-api/webpack.config.js"
+        "webpackConfig": "apps/apis/demo/webpack.config.js"
       },
       "configurations": {
         "production": {
@@ -28,11 +28,11 @@
     "serve": {
       "executor": "@nrwl/js:node",
       "options": {
-        "buildTarget": "demo-api:build"
+        "buildTarget": "api-demo:build"
       },
       "configurations": {
         "production": {
-          "buildTarget": "demo-api:build:production"
+          "buildTarget": "api-demo:build:production"
         }
       }
     },
@@ -40,14 +40,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/demo-api/**/*.ts"]
+        "lintFilePatterns": ["apps/apis/demo/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/demo-api/jest.config.ts",
+        "jestConfig": "apps/apis/demo/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {

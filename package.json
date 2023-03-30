@@ -2,7 +2,9 @@
   "name": "ping-pong",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "serve": "nx serve"
+  },
   "private": true,
   "devDependencies": {
     "@nrwl/cypress": "15.8.5",
