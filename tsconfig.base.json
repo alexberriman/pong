@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ping-pong/demo-lib": ["libs/demo-lib/src/index.ts"]
+      "@ping-pong/demo-lib": ["libs/demo-lib/src/index.ts"],
+      "@pong/common-ui": ["libs/ui/common/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
