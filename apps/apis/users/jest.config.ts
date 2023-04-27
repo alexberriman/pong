@@ -1,11 +1,11 @@
 /* eslint-disable */
 export default {
-  displayName: 'api-demo',
+  displayName: 'api-users',
   preset: '../../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]s$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],
   },
-  moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../../coverage/apps/api-demo',
+  moduleFileExtensions: ['ts', 'js', 'html', 'json'],
+  coverageDirectory: '../../../coverage/apps/api-users',
 };
