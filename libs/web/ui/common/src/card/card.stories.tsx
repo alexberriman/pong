@@ -10,7 +10,5 @@ const Template: Story<CardProps> = (args) => <Card {...args} />;
 
 export const BasicUsage = Template.bind({});
 BasicUsage.args = {
-  image: 'https://dummyimage.com/640x360/eee/aaa',
-  title: 'Sample card',
-  description: 'Sample description',
+  children: [<p>card content</p>],
 };
