@@ -4,3 +4,5 @@ export * from './breadcrumbs';
 export * from './button';
 export * from './card';
 export * from './loading-icon';
+
+export * from './types';
