@@ -1,0 +1,36 @@
+{
+  "name": "@pong/service-hooks",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/web/service-hooks/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": ["^build"],
+      "options": {
+        "outputPath": "dist/libs/web/service-hooks",
+        "main": "libs/web/service-hooks/src/index.ts",
+        "tsConfig": "libs/web/service-hooks/tsconfig.lib.json",
+        "assets": ["libs/web/service-hooks/*.md"],
+        "rootDir": "."
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/web/service-hooks/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/web/service-hooks"],
+      "options": {
+        "jestConfig": "libs/web/service-hooks/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

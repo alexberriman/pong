@@ -1,3 +1,5 @@
+import { RankingsTable } from '@pong/ladder';
+
 export function HomePage() {
-  return <div>home</div>;
+  return <RankingsTable />;
 }
