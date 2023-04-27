@@ -4,6 +4,7 @@ import {
   PlusCircleIcon,
   TableCellsIcon,
 } from '@heroicons/react/24/outline';
+import { Logo } from '@pong/common-ui';
 
 const menuItems = [
   { url: '/', icon: HomeModernIcon, name: 'Home' },
@@ -12,5 +13,12 @@ const menuItems = [
 ];
 
 export function Sidebar() {
-  return <LayoutSidebar menuItems={menuItems} />;
+  return (
+    <LayoutSidebar
+      menuItems={menuItems}
+      logo={
+        <Logo className="h-11 w-11 transition-transform duration-500 ease-in-out hover:rotate-[360deg]" />
+      }
+    />
+  );
 }

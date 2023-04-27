@@ -1,5 +1,12 @@
+import { Card } from '@pong/common-ui';
 import { RankingsTable } from '@pong/ladder';
 
 export function HomePage() {
-  return <RankingsTable />;
+  return (
+    <div>
+      <Card title="Leaderboard">
+        <RankingsTable />
+      </Card>
+    </div>
+  );
 }

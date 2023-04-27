@@ -1,34 +1,28 @@
 import { type ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { Heading } from '../heading';
 
 export interface CardProps {
-  image?: string | ReactNode;
-  title: string | ReactNode;
-  description?: string | ReactNode;
   className?: string;
-  contentClassName?: string;
+  children: ReactNode | ReactNode[];
+  title?: string | ReactNode | ReactNode[];
 }
 
-export function Card({
-  image,
-  title,
-  description,
-  className = '',
-  contentClassName = '',
-}: CardProps) {
+export function Card({ className = '', children, title }: CardProps) {
   return (
     <div
-      className={twMerge('bg-white rounded overflow-hidden border', className)}
+      className={twMerge(
+        'bg-white rounded shadow text-gray-600 flex flex-col break-words relative px-3 py-4',
+        className
+      )}
     >
-      {image && typeof image === 'string' && <img src={image} alt="" />}
-      {image && typeof image !== 'string' && image}
+      {title && typeof title === 'string' && (
+        <div className="mt-3 flex items-center justify-between px-4 sm:px-5">
+          <Heading as="h2">{title}</Heading>
+        </div>
+      )}
 
-      <div className={twMerge('p-4', contentClassName)}>
-        <div className="text-gray-800 font-medium">{title}</div>
-        {description && (
-          <div className="text-gray-500 text-sm mt-1">{description}</div>
-        )}
-      </div>
+      <div className="p-4">{children}</div>
     </div>
   );
 }
