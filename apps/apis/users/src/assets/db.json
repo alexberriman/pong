@@ -1,0 +1,17 @@
+[
+  {
+    "id": "7ab5594e-1f4f-47bc-8d1f-66653dfb7d0e",
+    "name": "Harry Potter",
+    "elo": 1400
+  },
+  {
+    "id": "0b63f993-faa8-4d3f-8dea-ee84f549d123",
+    "name": "Ron Weasley",
+    "elo": 1400
+  },
+  {
+    "id": "ad8be4a3-2c27-442a-b51f-18bdc0cc4610",
+    "name": "Hermione Granger",
+    "elo": 1400
+  }
+]
