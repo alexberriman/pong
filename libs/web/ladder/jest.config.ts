@@ -1,9 +1,9 @@
 export default {
-  displayName: '@pong/layout-ui',
+  displayName: '@pong/ladder',
   preset: '../../../jest.preset.js',
   transform: {
     '^.+\\.[tj]sx?$': 'babel-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../../coverage/libs/ui/layout',
+  coverageDirectory: '../../../coverage/libs/web/ladder',
 };

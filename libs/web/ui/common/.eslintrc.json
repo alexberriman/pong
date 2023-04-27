@@ -1,0 +1,18 @@
+{
+  "extends": ["plugin:@nrwl/nx/react", "../../../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "react/jsx-no-useless-fragment": 0
+      }
+    },
+    {
+      "files": ["*.stories.tsx", "*.spec.ts"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": 0
+      }
+    }
+  ]
+}

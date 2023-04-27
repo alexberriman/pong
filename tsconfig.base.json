@@ -15,9 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@pong/common-ui": ["libs/ui/common/src/index.ts"],
-      "@pong/layout": ["libs/ui/layout/src/index.ts"],
-      "@pong/users-api": ["apps/apis/users/index.ts"]
+      "@pong/common-ui": ["libs/web/ui/common/src/index.ts"],
+      "@pong/ladder": ["libs/web/ladder/src/index.ts"],
+      "@pong/layout": ["libs/web/ui/layout/src/index.ts"],
+      "@pong/service-hooks": ["libs/web/service-hooks/src/index.ts"],
+      "@pong/users-api": ["apps/apis/users/src/types.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

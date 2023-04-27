@@ -1,9 +1,9 @@
 export default {
-  displayName: '@pong/common-ui',
+  displayName: '@pong/service-hooks',
   preset: '../../../jest.preset.js',
   transform: {
     '^.+\\.[tj]sx?$': 'babel-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../../coverage/libs/ui/common',
+  coverageDirectory: '../../../coverage/libs/web/service-hooks',
 };

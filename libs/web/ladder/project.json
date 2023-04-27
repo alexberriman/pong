@@ -1,0 +1,36 @@
+{
+  "name": "@pong/ladder",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/web/ladder/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": ["^build"],
+      "options": {
+        "outputPath": "dist/libs/web/ladder",
+        "main": "libs/web/ladder/src/index.ts",
+        "tsConfig": "libs/web/ladder/tsconfig.lib.json",
+        "assets": ["libs/web/ladder/*.md"],
+        "rootDir": "."
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/web/ladder/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/web/ladder"],
+      "options": {
+        "jestConfig": "libs/web/ladder/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
-  "name": "@pong/layout-ui",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/ui/layout/src",
+  "name": "@pong/common-ui",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/web/ui/common/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -10,10 +10,10 @@
       "outputs": ["{options.outputPath}"],
       "dependsOn": ["^build"],
       "options": {
-        "outputPath": "dist/libs/ui/layout",
-        "main": "libs/ui/layout/src/index.ts",
-        "tsConfig": "libs/ui/layout/tsconfig.lib.json",
-        "assets": ["libs/ui/layout/*.md"],
+        "outputPath": "dist/libs/web/ui/common",
+        "main": "libs/web/ui/common/src/index.ts",
+        "tsConfig": "libs/web/ui/common/tsconfig.lib.json",
+        "assets": ["libs/web/ui/common/*.md"],
         "rootDir": "."
       }
     },
@@ -21,14 +21,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/ui/layout/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["libs/web/ui/common/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/ui/layout"],
+      "outputs": ["coverage/libs/web/ui/common"],
       "options": {
-        "jestConfig": "libs/ui/layout/jest.config.ts",
+        "jestConfig": "libs/web/ui/common/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -36,7 +36,7 @@
       "executor": "@nrwl/storybook:storybook",
       "options": {
         "port": 4400,
-        "configDir": "libs/ui/layout/.storybook",
+        "configDir": "libs/web/ui/common/.storybook",
         "uiFramework": "@storybook/react"
       },
       "configurations": {
@@ -49,8 +49,8 @@
       "executor": "@nrwl/storybook:build",
       "outputs": ["{options.outputDir}"],
       "options": {
-        "outputDir": "dist/storybook/@pong/layout-ui",
-        "configDir": "libs/ui/layout/.storybook",
+        "outputDir": "dist/storybook/@pong/common-ui",
+        "configDir": "libs/web/ui/common/.storybook",
         "uiFramework": "@storybook/react"
       },
       "configurations": {
