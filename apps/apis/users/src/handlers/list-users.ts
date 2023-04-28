@@ -7,11 +7,11 @@ export const listUsers = async (req: Request, res: Response) => {
       ? JSON.parse(req.query.condition as string)
       : undefined;
 
-    const users = await db.$.find(condition);
+    const users = db.$.find(condition);
     return res.status(200).json({ data: users.data });
   } catch (e: unknown) {
     if (e instanceof Error) {
-      console.warn('listUsers', e.message);
+      console.warn('[error] listUsers', e.message);
     }
 
     res.status(400).json({ message: 'Bad request' });
