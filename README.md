@@ -26,6 +26,7 @@ To get started, run:
 - `npm install`
 - `npm run serve app-web` to start the web application
 - `npm run serve api-users` to start the users api
+- `npm run storybook common-ui` to start the common ui storybook
 
 ## License
 

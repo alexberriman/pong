@@ -4,6 +4,6 @@ import { db } from '../database/db';
 
 export const createUser = async (req: Request, res: Response) => {
   const id = uuidv4();
-  await db.$.insert({ ...req.body, id }).commit();
+  db.$.insert({ ...req.body, id }).commit();
   res.status(201).json({ id });
 };
