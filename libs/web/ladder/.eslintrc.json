@@ -1,18 +1,18 @@
 {
-  "extends": ["plugin:@nrwl/nx/react", "../../../.eslintrc.json"],
+  "extends": ["plugin:@nx/react", "../../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
-      "files": ["*.tsx"],
-      "rules": {
-        "react/jsx-no-useless-fragment": 0
-      }
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {}
     },
     {
-      "files": ["*.stories.tsx", "*.spec.ts"],
-      "rules": {
-        "@typescript-eslint/no-explicit-any": 0
-      }
+      "files": ["*.ts", "*.tsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
     }
   ]
 }

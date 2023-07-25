@@ -9,9 +9,9 @@ module.exports = {
     '../src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
-    ...rootMain.addons,
     '@storybook/addon-essentials',
-    '@nrwl/react/plugins/storybook',
+    ...rootMain.addons,
+    '@nx/react/plugins/storybook',
   ],
 };
 

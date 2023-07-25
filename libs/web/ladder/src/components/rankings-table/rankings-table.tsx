@@ -1,6 +1,7 @@
-import { useUsers } from '@pong/service-hooks';
-import { LoadingContainer } from '@pong/common-ui';
 import type { TdHTMLAttributes, ThHTMLAttributes } from 'react';
+import { USERS_API_ENDPOINT, useUsers } from '@pong/service-hooks';
+import { LoadingContainer } from '@pong/common-ui';
+import { format } from 'date-fns';
 
 const TH = ({ children, ...props }: ThHTMLAttributes<HTMLTableCellElement>) => (
   <th
@@ -34,6 +35,7 @@ export function RankingsTable() {
         <tr>
           <TH colSpan={2}>Name</TH>
           <TH>Ranking</TH>
+          <TH>Last match</TH>
         </tr>
       </thead>
       <tbody className="bg-white">
@@ -45,21 +47,22 @@ export function RankingsTable() {
           </tr>
         )}
 
-        {data.map(({ id, name, elo, profilePicture }) => (
+        {data.map(({ id, name, elo, lastMatch }) => (
           <tr key={id} className="cursor-pointer group">
             <TD className="w-14 py-3">
-              {profilePicture ? (
-                <img
-                  src={profilePicture}
-                  className="h-12 w-12 rounded-lg"
-                  alt={name}
-                />
-              ) : (
-                <span />
-              )}
+              <img
+                src={`${USERS_API_ENDPOINT}/users/${id}/profile-picture`}
+                className="h-12 w-12 rounded-full"
+                alt={name}
+              />
             </TD>
             <TD>{name}</TD>
-            <TD>{elo}</TD>
+            <TD>{Math.round(elo)}</TD>
+            <TD>
+              {lastMatch
+                ? format(new Date(lastMatch), 'dd/MM/yyyy hh:mm aa')
+                : 'n/a'}
+            </TD>
           </tr>
         ))}
       </tbody>

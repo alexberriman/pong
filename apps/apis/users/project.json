@@ -5,7 +5,7 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/webpack:webpack",
+      "executor": "@nx/webpack:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
         "target": "node",
@@ -15,7 +15,8 @@
         "tsConfig": "apps/apis/users/tsconfig.app.json",
         "assets": ["apps/apis/users/src/assets"],
         "isolatedConfig": true,
-        "webpackConfig": "apps/apis/users/webpack.config.js"
+        "webpackConfig": "apps/apis/users/webpack.config.js",
+        "generatePackageJson": true
       },
       "configurations": {
         "production": {
@@ -26,7 +27,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/js:node",
+      "executor": "@nx/js:node",
       "options": {
         "buildTarget": "api-users:build"
       },
@@ -37,14 +38,14 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["apps/apis/users/**/*.ts"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/apis/users/jest.config.ts",

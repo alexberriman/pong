@@ -1,3 +1,5 @@
+import { ResultForm } from '../../components/result-form';
+
 export function LogPage() {
-  return <div>log page</div>;
+  return <ResultForm />;
 }

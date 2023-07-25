@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { db } from '../database/db';
 
 export const updateUser = async (req: Request, res: Response) => {
-  const userId = req.params.userId;
+  const { userId } = req.params;
   const user = db.$.get(userId);
 
   if (!user.exists) {

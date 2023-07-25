@@ -5,27 +5,15 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "build": {
-      "executor": "@nrwl/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "dependsOn": ["^build"],
-      "options": {
-        "outputPath": "dist/libs/web/ui/common",
-        "main": "libs/web/ui/common/src/index.ts",
-        "tsConfig": "libs/web/ui/common/tsconfig.lib.json",
-        "assets": ["libs/web/ui/common/*.md"],
-        "rootDir": "."
-      }
-    },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["libs/web/ui/common/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["coverage/libs/web/ui/common"],
       "options": {
         "jestConfig": "libs/web/ui/common/jest.config.ts",
@@ -33,11 +21,10 @@
       }
     },
     "storybook": {
-      "executor": "@nrwl/storybook:storybook",
+      "executor": "@nx/storybook:storybook",
       "options": {
         "port": 4400,
-        "configDir": "libs/web/ui/common/.storybook",
-        "uiFramework": "@storybook/react"
+        "configDir": "libs/web/ui/common/.storybook"
       },
       "configurations": {
         "ci": {
@@ -46,12 +33,11 @@
       }
     },
     "build-storybook": {
-      "executor": "@nrwl/storybook:build",
+      "executor": "@nx/storybook:build",
       "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/@pong/common-ui",
-        "configDir": "libs/web/ui/common/.storybook",
-        "uiFramework": "@storybook/react"
+        "configDir": "libs/web/ui/common/.storybook"
       },
       "configurations": {
         "ci": {

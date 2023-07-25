@@ -1,20 +1,157 @@
 [
   {
-    "id": "7ab5594e-1f4f-47bc-8d1f-66653dfb7d0e",
-    "name": "Harry Potter",
+    "id": "8f967682-41eb-40ee-8d05-77dca7edd908",
+    "name": "Alex Berriman",
     "elo": 1400,
-    "profilePicture": "https://i.imgur.com/B47FjnE.png"
+    "profilePicture": "/assets/images/alex.png"
   },
   {
-    "id": "0b63f993-faa8-4d3f-8dea-ee84f549d123",
-    "name": "Ron Weasley",
+    "id": "7f7a716d-8f56-4301-aa40-1d9ef557a3b3",
+    "name": "Anisha Venkanah",
     "elo": 1400,
-    "profilePicture": "https://i.imgur.com/naDnIT9.png"
+    "profilePicture": "/assets/images/anisha.png"
   },
   {
-    "id": "ad8be4a3-2c27-442a-b51f-18bdc0cc4610",
-    "name": "Hermione Granger",
+    "id": "d1297af1-bc27-4549-9286-9e625fc52336",
+    "name": "Charlie Bailey",
     "elo": 1400,
-    "profilePicture": "https://i.imgur.com/9TIm1LJ.png"
+    "profilePicture": "/assets/images/charlie.png"
+  },
+  {
+    "id": "c451ddd1-6297-4544-ad9c-538166b672af",
+    "name": "Chris Makomaski",
+    "elo": 1400,
+    "profilePicture": "/assets/images/chris.png"
+  },
+  {
+    "id": "da5c89b2-c51b-4b0c-a6f7-213520f0aa83",
+    "name": "Cyril Chen",
+    "elo": 1400,
+    "profilePicture": "/assets/images/cyril.png"
+  },
+  {
+    "id": "9bc3d1b9-c4da-4671-996d-661c52de09f5",
+    "name": "Daniel Chen",
+    "elo": 1400,
+    "profilePicture": "/assets/images/dan.png"
+  },
+  {
+    "id": "9ed4bb47-2672-4b02-bc88-9dd404d0b86a",
+    "name": "Daniel Elias",
+    "elo": 1400,
+    "profilePicture": "/assets/images/dane.png"
+  },
+  {
+    "id": "e4826fac-4132-4cb3-a46f-4b3edf1a61f4",
+    "name": "David Vincent",
+    "elo": 1400,
+    "profilePicture": "/assets/images/david.png"
+  },
+  {
+    "id": "434fd261-955d-4c5b-9152-0e8c49fb1625",
+    "name": "Douglas Crawley",
+    "elo": 1400,
+    "profilePicture": "/assets/images/douglas.png"
+  },
+  {
+    "id": "1b1a363e-95d4-4aa5-9658-f44a4cf2c45e",
+    "name": "Giuseppe Sardo",
+    "elo": 1400,
+    "profilePicture": "/assets/images/giuseppe.jpg"
+  },
+  {
+    "id": "7a66e5c3-09a2-4f4d-8771-9507624a7ac3",
+    "name": "Jack Jensen",
+    "elo": 1400,
+    "profilePicture": "/assets/images/jack.png"
+  },
+  {
+    "id": "01471cbd-05ae-4985-afd4-782ba9071033",
+    "name": "Jackie Sun",
+    "elo": 1400,
+    "profilePicture": "/assets/images/jackie.png"
+  },
+  {
+    "id": "64a6e494-fdab-409f-95fe-a842256e9cfb",
+    "name": "Kevin Lee",
+    "elo": 1400
+  },
+  {
+    "id": "69b3ea2a-2474-4ec7-b0a0-095406cbf6e6",
+    "name": "Lloyd Smith",
+    "elo": 1400,
+    "profilePicture": "/assets/images/lloyd.png"
+  },
+  {
+    "id": "e485b5cf-363b-4202-bd60-6b3bd567ca6f",
+    "name": "Maddison Sherrah",
+    "elo": 1400,
+    "profilePicture": "/assets/images/maddie.png"
+  },
+  {
+    "id": "74f806b7-bdf5-4cd9-ad75-6212b09213b8",
+    "name": "Nathaniel Sean Susanto",
+    "elo": 1400,
+    "profilePicture": "/assets/images/nathan.png"
+  },
+  {
+    "id": "a1d53399-7234-4c4c-9719-2a6a8e8de909",
+    "name": "Nay Lin (Jeff) Oo",
+    "elo": 1400,
+    "profilePicture": "/assets/images/jeff.png"
+  },
+  {
+    "id": "a4921641-d2c2-4364-96cd-f511d68db88f",
+    "name": "Nikky Sciacca",
+    "elo": 1400,
+    "profilePicture": "/assets/images/nicky.jpeg"
+  },
+  {
+    "id": "fe3d4e73-57e2-40f2-8ce8-9405d102dae9",
+    "name": "Rob Pulley",
+    "elo": 1400,
+    "profilePicture": "/assets/images/rob.png"
+  },
+  {
+    "id": "25c6d1d0-e8d4-404e-a06c-34ade320841a",
+    "name": "Roscoe Lotriet",
+    "elo": 1400,
+    "profilePicture": "/assets/images/roscoe.png"
+  },
+  {
+    "id": "cbb84a4e-9266-43bd-b802-4d129f25fd24",
+    "name": "Seul Lee",
+    "elo": 1400,
+    "profilePicture": "/assets/images/seul.png"
+  },
+  {
+    "id": "2e6cc079-0d88-4a6a-87c1-71281755bc41",
+    "name": "Shubhankar Mathur",
+    "elo": 1400,
+    "profilePicture": "/assets/images/shubhankar.png"
+  },
+  {
+    "id": "5b549787-f12e-4aa1-9d7f-21514ff5d610",
+    "name": "Sophie Shawdon",
+    "elo": 1400,
+    "profilePicture": "/assets/images/sophie.png"
+  },
+  {
+    "id": "f6d3f92f-e54d-495d-b3d0-e85f87d4106d",
+    "name": "Stephen Smyth",
+    "elo": 1400,
+    "profilePicture": "/assets/images/stephen.png"
+  },
+  {
+    "id": "92483d07-b8a1-4f48-9b35-e86054070e50",
+    "name": "Sugandh Singhal",
+    "elo": 1400,
+    "profilePicture": "/assets/images/sugandh.png"
+  },
+  {
+    "id": "26c385a2-9f38-4f4c-aa2f-1da6398a6db4",
+    "name": "Tegan Wilson",
+    "elo": 1400,
+    "profilePicture": "/assets/images/tegan.png"
   }
 ]
