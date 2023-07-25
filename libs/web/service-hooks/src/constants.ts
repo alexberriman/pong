@@ -1,1 +1,5 @@
-export const USERS_API_ENDPOINT = 'http://localhost:3333'; // @todo - replace with env var
+export const MATCHES_API_ENDPOINT =
+  import.meta.env['VITE_MATCHES_API'] ?? 'https://pong.app.vision/api';
+
+export const USERS_API_ENDPOINT =
+  import.meta.env['VITE_USERS_API'] ?? 'https://pong.app.vision/api';

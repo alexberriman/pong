@@ -1,4 +1,5 @@
 {
+  "extends": "@tsconfig/node16/tsconfig.json",
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
@@ -7,18 +8,28 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "importHelpers": true,
+    "importHelpers": false,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": ["es2019", "dom", "dom.iterable"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "allowUnreachableCode": true,
+    "noUncheckedIndexedAccess": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noFallthroughCasesInSwitch": true,
     "paths": {
       "@pong/common-ui": ["libs/web/ui/common/src/index.ts"],
       "@pong/ladder": ["libs/web/ladder/src/index.ts"],
       "@pong/layout": ["libs/web/ui/layout/src/index.ts"],
+      "@pong/matches": ["libs/shared/matches/src/index.ts"],
       "@pong/service-hooks": ["libs/web/service-hooks/src/index.ts"],
+      "@pong/users": ["libs/shared/users/src/index.ts"],
       "@pong/users-api": ["apps/apis/users/src/types.ts"]
     }
   },

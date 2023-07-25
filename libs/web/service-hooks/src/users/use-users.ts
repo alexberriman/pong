@@ -1,5 +1,5 @@
 import { type UseQueryOptions, useQuery } from '@tanstack/react-query';
-import type { User } from '@pong/users-api';
+import type { User } from '@pong/users';
 import { USERS_API_ENDPOINT } from '../constants';
 
 interface UseMessageQueueOptions {
