@@ -2,20 +2,35 @@ import type { TdHTMLAttributes, ThHTMLAttributes } from 'react';
 import { USERS_API_ENDPOINT, useUsers } from '@pong/service-hooks';
 import { LoadingContainer } from '@pong/common-ui';
 import { format } from 'date-fns';
+import { twMerge } from 'tailwind-merge';
 
-const TH = ({ children, ...props }: ThHTMLAttributes<HTMLTableCellElement>) => (
+const TH = ({
+  children,
+  className,
+  ...props
+}: ThHTMLAttributes<HTMLTableCellElement>) => (
   <th
     scope="col"
-    className="px-6 py-5 text-left text-black-900 font-semibold capitalize tracking-wider"
+    className={twMerge(
+      'px-3 py-2 sm:px-6 sm:py-5 text-left text-black-900 font-semibold capitalize tracking-wider',
+      className
+    )}
     {...props}
   >
     {children}
   </th>
 );
 
-const TD = ({ children, ...props }: TdHTMLAttributes<HTMLTableCellElement>) => (
+const TD = ({
+  children,
+  className,
+  ...props
+}: TdHTMLAttributes<HTMLTableCellElement>) => (
   <td
-    className="px-6 py-5 whitespace-nowrap transition-all duration-200 bg-white group-hover:bg-slate-100/75"
+    className={twMerge(
+      'px-3 py-2 sm:px-6 sm:py-5 whitespace-nowrap transition-all duration-200 bg-white group-hover:bg-slate-100/75',
+      className
+    )}
     {...props}
   >
     {children}
@@ -35,7 +50,7 @@ export function RankingsTable() {
         <tr>
           <TH colSpan={2}>Name</TH>
           <TH>Ranking</TH>
-          <TH>Last match</TH>
+          <TH className="hidden sm:table-cell">Last match</TH>
         </tr>
       </thead>
       <tbody className="bg-white">
@@ -49,16 +64,16 @@ export function RankingsTable() {
 
         {data.map(({ id, name, elo, lastMatch }) => (
           <tr key={id} className="cursor-pointer group">
-            <TD className="w-14 py-3">
+            <TD className="w-14 min py-3 px-0 sm:px-0">
               <img
                 src={`${USERS_API_ENDPOINT}/users/${id}/profile-picture`}
                 className="h-12 w-12 rounded-full"
                 alt={name}
               />
             </TD>
-            <TD>{name}</TD>
+            <TD className="truncate">{name}</TD>
             <TD>{Math.round(elo)}</TD>
-            <TD>
+            <TD className="hidden sm:table-cell">
               {lastMatch
                 ? format(new Date(lastMatch), 'dd/MM/yyyy hh:mm aa')
                 : 'n/a'}

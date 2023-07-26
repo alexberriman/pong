@@ -7,7 +7,7 @@ export const listUsers = async (req: Request, res: Response) => {
       ? JSON.parse(req.query['condition'] as string)
       : undefined;
 
-    const users = db.$.find(condition).orderBy({ elo: 'desc' });
+    const users = db.$.find(condition).orderBy({ elo: 'desc', name: 'asc' });
     res.status(200).json({ data: users.data });
   } catch (e: unknown) {
     if (e instanceof Error) {

@@ -12,7 +12,7 @@ export function Card({ className = '', children, title }: CardProps) {
   return (
     <div
       className={twMerge(
-        'bg-white rounded shadow text-gray-600 flex flex-col break-words relative px-3 py-4',
+        'bg-white rounded shadow text-gray-600 flex flex-col break-words relative sm:px-3 sm:py-4',
         className
       )}
     >

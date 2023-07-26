@@ -9,7 +9,10 @@ export interface MainProps {
 export function Main({ className = '', children }: MainProps) {
   return (
     <main
-      className={twMerge('main-content w-full pb-8 mt-16 px-4 py-4', className)}
+      className={twMerge(
+        'main-content w-full pb-8 mb-6 sm:mt-16 px-4 py-4',
+        className
+      )}
     >
       {children}
     </main>

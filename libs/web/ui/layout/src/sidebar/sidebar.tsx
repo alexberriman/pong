@@ -25,7 +25,7 @@ export function SideBar({
   return (
     <div
       className={twMerge(
-        'print:hidden h-full shrink-0 w-20 z-20 bg-white',
+        'print:hidden h-full shrink-0 w-20 z-20 bg-white hidden sm:block',
         className
       )}
     >
