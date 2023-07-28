@@ -38,7 +38,13 @@ const TD = ({
 );
 
 export function RankingsTable() {
-  const { isLoading, isError, data } = useUsers();
+  const { isLoading, isError, data } = useUsers({
+    filter: {
+      property: { name: 'lastMatch', preProcess: ['toLength'] },
+      operator: 'greaterThan',
+      value: 0,
+    },
+  });
 
   if (isLoading || isError || !data) {
     return <LoadingContainer />;
