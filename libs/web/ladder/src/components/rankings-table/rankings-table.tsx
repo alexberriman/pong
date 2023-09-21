@@ -1,8 +1,34 @@
 import type { TdHTMLAttributes, ThHTMLAttributes } from 'react';
-import { USERS_API_ENDPOINT, useUsers } from '@pong/service-hooks';
+import { USERS_API_ENDPOINT, useUsers, useRankings } from '@pong/service-hooks';
 import { LoadingContainer } from '@pong/common-ui';
 import { format } from 'date-fns';
 import { twMerge } from 'tailwind-merge';
+import { ArrowDownIcon, ArrowUpIcon } from '@heroicons/react/24/solid';
+
+type TrendProps = {
+  value: number;
+};
+
+const Trend = ({ value }: TrendProps) => {
+  if (value === 0) {
+    return null;
+  }
+
+  return (
+    <div
+      className={`font-semibold text-sm flex flex-row ${
+        value > 0 ? 'text-emerald-600' : 'text-red-500'
+      }`}
+    >
+      {value > 0 ? (
+        <ArrowUpIcon className="w-3.5 h-3.5" />
+      ) : (
+        <ArrowDownIcon className="w-3.5 h-3.5" />
+      )}
+      {Math.floor(value)}
+    </div>
+  );
+};
 
 const TH = ({
   children,
@@ -38,6 +64,7 @@ const TD = ({
 );
 
 export function RankingsTable() {
+  const rankings = useRankings();
   const { isLoading, isError, data } = useUsers({
     filter: {
       property: { name: 'lastMatch', preProcess: ['toLength'] },
@@ -46,7 +73,7 @@ export function RankingsTable() {
     },
   });
 
-  if (isLoading || isError || !data) {
+  if (isLoading || isError || !data || rankings.isLoading || !rankings.data) {
     return <LoadingContainer />;
   }
 
@@ -78,7 +105,15 @@ export function RankingsTable() {
               />
             </TD>
             <TD className="truncate">{name}</TD>
-            <TD>{Math.round(elo)}</TD>
+            <TD className="flex flex-row gap-x-2">
+              {Math.round(elo)}
+              <Trend
+                value={
+                  rankings.data.find((ranking) => ranking.id === id)
+                    ?.weeklyTrend
+                }
+              />
+            </TD>
             <TD className="hidden sm:table-cell">
               {lastMatch
                 ? format(new Date(lastMatch), 'dd/MM/yyyy hh:mm aa')
