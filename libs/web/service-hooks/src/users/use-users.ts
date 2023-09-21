@@ -12,7 +12,7 @@ const useUsers = ({
   queryOptions = {},
 }: UseMessageQueueOptions = {}) => {
   const query = useQuery<User[], Error>(
-    ['users'],
+    ['users', JSON.stringify(filter)],
     async () => {
       try {
         const { data } = await (
