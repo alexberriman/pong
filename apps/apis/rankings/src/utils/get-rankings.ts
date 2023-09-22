@@ -11,7 +11,14 @@ type Ranking = any;
 const toRanking =
   (matches: Match[]) =>
   (user: User): Ranking => {
-    return { ...user, weeklyTrend: weeklyTrend({ userId: user.id, matches }) };
+    return {
+      ...user,
+      matchesPlayed: matches.length,
+      weeklyTrend: weeklyTrend({
+        userId: user.id,
+        matches,
+      }),
+    };
   };
 
 const getRankings = async (): Promise<Result<Ranking[], Error>> => {

@@ -77,12 +77,16 @@ export function RankingsTable() {
     return <LoadingContainer />;
   }
 
+  const ranking = (id: string) =>
+    rankings.data.find((ranking) => ranking.id === id);
+
   return (
     <table className="min-w-full divide-y divide-slate-200">
       <thead className="bg-slate-50">
         <tr>
           <TH colSpan={2}>Name</TH>
           <TH>Ranking</TH>
+          <TH className="hidden sm:table-cell">Matches</TH>
           <TH className="hidden sm:table-cell">Last match</TH>
         </tr>
       </thead>
@@ -105,14 +109,14 @@ export function RankingsTable() {
               />
             </TD>
             <TD className="truncate">{name}</TD>
-            <TD className="flex flex-row gap-x-2">
-              {Math.round(elo)}
-              <Trend
-                value={
-                  rankings.data.find((ranking) => ranking.id === id)
-                    ?.weeklyTrend
-                }
-              />
+            <TD>
+              <div className="flex flex-row gap-x-2 grow h-full">
+                {Math.round(elo)}
+                <Trend value={ranking(id)?.weeklyTrend} />
+              </div>
+            </TD>
+            <TD className="hidden sm:table-cell">
+              {ranking(id)?.matchesPlayed}
             </TD>
             <TD className="hidden sm:table-cell">
               {lastMatch
