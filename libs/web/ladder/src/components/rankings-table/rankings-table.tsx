@@ -1,69 +1,13 @@
-import type { TdHTMLAttributes, ThHTMLAttributes } from 'react';
+import { useContext } from 'react';
 import { USERS_API_ENDPOINT, useUsers, useRankings } from '@pong/service-hooks';
-import { LoadingContainer } from '@pong/common-ui';
+import { LoadingContainer, ModalContext } from '@pong/common-ui';
 import { format } from 'date-fns';
-import { twMerge } from 'tailwind-merge';
-import { ArrowDownIcon, ArrowUpIcon } from '@heroicons/react/24/solid';
-
-type TrendProps = {
-  value: number;
-};
-
-const Trend = ({ value }: TrendProps) => {
-  if (value === 0) {
-    return null;
-  }
-
-  return (
-    <div
-      className={`font-semibold text-sm flex flex-row ${
-        value > 0 ? 'text-emerald-600' : 'text-red-500'
-      }`}
-    >
-      {value > 0 ? (
-        <ArrowUpIcon className="w-3.5 h-3.5" />
-      ) : (
-        <ArrowDownIcon className="w-3.5 h-3.5" />
-      )}
-      {Math.floor(value)}
-    </div>
-  );
-};
-
-const TH = ({
-  children,
-  className,
-  ...props
-}: ThHTMLAttributes<HTMLTableCellElement>) => (
-  <th
-    scope="col"
-    className={twMerge(
-      'px-3 py-2 sm:px-6 sm:py-5 text-left text-black-900 font-semibold capitalize tracking-wider',
-      className
-    )}
-    {...props}
-  >
-    {children}
-  </th>
-);
-
-const TD = ({
-  children,
-  className,
-  ...props
-}: TdHTMLAttributes<HTMLTableCellElement>) => (
-  <td
-    className={twMerge(
-      'px-3 py-2 sm:px-6 sm:py-5 whitespace-nowrap transition-all duration-200 bg-white group-hover:bg-slate-100/75',
-      className
-    )}
-    {...props}
-  >
-    {children}
-  </td>
-);
+import { UserDetails } from '../user-details';
+import { TD, TH } from '../table';
+import { Trend } from '../trend';
 
 export function RankingsTable() {
+  const { closeModal, showModal } = useContext(ModalContext);
   const rankings = useRankings();
   const { isLoading, isError, data } = useUsers({
     filter: {
@@ -100,7 +44,17 @@ export function RankingsTable() {
         )}
 
         {data.map(({ id, name, elo, lastMatch }) => (
-          <tr key={id} className="cursor-pointer group">
+          <tr
+            key={id}
+            className="cursor-pointer group"
+            onClick={() => {
+              showModal(<UserDetails id={id} />, {
+                className:
+                  'overflow-visible sm:p-0 transition-all w-full md:w-[784px] p-3',
+                onClose: closeModal,
+              });
+            }}
+          >
             <TD className="w-14 min py-3 px-0 sm:px-0">
               <img
                 src={`${USERS_API_ENDPOINT}/users/${id}/profile-picture`}

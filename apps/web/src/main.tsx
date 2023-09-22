@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from '@pong/service-hooks';
+import { ModalProvider } from '@pong/common-ui';
 
 import App from './app/app';
 import './styles.css';
@@ -14,7 +15,9 @@ root.render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <App />
+        <ModalProvider>
+          <App />
+        </ModalProvider>
       </BrowserRouter>
     </QueryClientProvider>
   </StrictMode>
